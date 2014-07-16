@@ -12,8 +12,16 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
             io = io.connect();
-            console.log(io);
 
+            io.emit('test');
+
+            document.addEventListener('click', function(e) {
+                io.emit('test');
+            });
+
+            io.on('test-response', function(data) {
+                console.log(data.message);
+            });
         </script>
     </body>
 </html>

@@ -5,11 +5,6 @@ var express = require('express.io'),
 module.exports = function(app, passport) {
     var staticFiles = config.staticFiles || 'client';
 
-    app.use('/', function(req, res, next) {
-        console.log('gah!');
-        next();
-    });
-
     // Authentication Routes
     // ------------------------------------------------
     app.get('/auth/twitter', passport.authenticate('twitter'));
@@ -28,6 +23,12 @@ module.exports = function(app, passport) {
     // ------------------------------------------------
     app.io.on('connection', function(socket) {
         console.log('new connection');
+    });
+
+    app.io.route('test', function(req) {
+        req.io.emit('test-response', {
+            message: 'I am hungry'
+        });
     });
 
 
