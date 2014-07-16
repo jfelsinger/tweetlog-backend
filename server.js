@@ -1,7 +1,7 @@
 /**
  * Module Dependencies
  */
-var express = require('express'),
+var express = require('express.io'),
     fs = require('fs');
 
 // Load configurations

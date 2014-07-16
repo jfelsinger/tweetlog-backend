@@ -6,5 +6,11 @@ module.exports = {
     defaultControllerMethod: 'render',
     root: root,
     port: process.env.PORT || 3000,
-    db: process.env.MONGOHQ_URL
+    db: process.env.MONGOHQ_URL,
+    auth: {
+        twitter: {
+            consumerKey: 'fVKAAfrmLJLnHTOmIKzPpGOvS',
+            consumerSecret: 'ggGQz959PIh5lrdgVwujMn6XLr0hrtPjE2rbm8esKhAybLY6xj',
+        }
+    }
 };

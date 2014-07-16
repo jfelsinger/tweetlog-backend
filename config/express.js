@@ -1,4 +1,5 @@
-var express = require('express'),
+var express = require('express.io'),
+    passport = require('passport'),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
     session = require('express-session'),
@@ -10,6 +11,7 @@ var config = require('./config');
 
 module.exports = function(app) {
     app.set('showStackError', true);
+    app.http().io();
 
     // No logger on test environment
     if (process.env.NODE_ENV !== 'test') {
@@ -33,14 +35,17 @@ module.exports = function(app) {
         })
     }));
 
+    // Setup passport
+    require('./passport')(passport);
+    app.use(passport.initialize());
+    app.use(passport.session());
+
     // parse application/json
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
 
     // Continue to routing, 
-    require('./routes/controllers')(app);
-    require('./routes/api')(app);
-    require('./routes/static')(app);
+    require('./routes')(app, passport);
 
     // 500 Error
     app.use(function(err, req, res, next) {
