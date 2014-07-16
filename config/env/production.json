@@ -1,0 +1,6 @@
+{
+    "db": "mongodb://localhost/tweetlog-production",
+    "app": {
+        "name": "Tweetlog - Production"
+    }
+}

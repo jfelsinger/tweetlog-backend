@@ -1,0 +1,36 @@
+{
+  "name": "tweetlog-backend",
+  "description": "",
+  "version": "0.0.0",
+  "author": "",
+  "scripts": {
+    "start": "node node_modules/grunt-cli/bin/grunt serve"
+  },
+  "dependencies": {
+    "async": "latest",
+    "body-parser": "^1.4.3",
+    "connect-mongo": "latest",
+    "cookie-parser": "^1.1.0",
+    "express": "^4.3.1",
+    "express-session": "^1.2.1",
+    "forever": "latest",
+    "gulp": "^3.6.2",
+    "method-override": "^1.0.2",
+    "mongoose": "^3.8.11",
+    "morgan": "^1.1.1",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "connect-livereload": "latest",
+    "gulp": "^3.6.2",
+    "gulp-jshint": "latest",
+    "gulp-mocha": "latest",
+    "gulp-nodemon": "latest",
+    "gulp-notify": "latest",
+    "jshint-stylish": "latest"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

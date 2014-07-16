@@ -1,0 +1,7 @@
+{
+    "db": "mongodb://localhost/tweetlog-travis",
+    "port": 3001,
+    "app": {
+        "name": "Tweetlog - Travis"
+    }
+}
